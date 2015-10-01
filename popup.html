@@ -1,0 +1,130 @@
+<!doctype html>
+<html>
+    
+    <head>
+        <meta charset="UTF-8">
+        <title>Responsive Inspector</title>
+        <link rel="stylesheet" href="css/popup.css">
+        <script src="scripts/libs/jquery-1.9.1.js"></script>
+        <script src="scripts/libs/chroma.js"></script>
+        <script src="scripts/popup.js"></script>
+        <script src="scripts/snapshot.js"></script>
+    </head>
+    
+    <body data-state="media-queries">
+        <!-- media-queries authorize -->
+        <header>
+            <span class="app-name">Responsive Inspector</span>
+            <div id="preview-buttons">
+                <a id="btn-save" href="#" class="button">
+                    <img src="images/ico-save.png" />
+                    <span>SAVE FILE</span>
+                </a>
+                <a id="btn-share" href="#" class="button">
+                    <img src="images/ico-behance.png" />
+                    <span>SHARE</span>
+                </a>
+                <a id="btn-discard" href="#" class="button">
+                    <img src="images/ico-delete.png" />
+                    <span>DISCARD</span>
+                </a>
+            </div>
+            <div id="media-queries-buttons">
+                <a id="btn-zoom-out" href="#">
+                    <img src="images/ico-zoomout.png" />
+                </a>
+                <a id="btn-zoom-in" href="#">
+                    <img src="images/ico-zoomin.png" />
+                </a>
+                
+            </div>
+            <div id="publish-buttons">
+                
+                <a id="btn-publish" href="#" class="button">
+                    <img src="images/ico-behance.png" />
+                    <span>PUBLISH</span>
+                </a>
+                <a id="btn-publish-cancel" href="#" class="button">
+                    <img src="images/ico-back.png" />
+                    <span>CANCEL</span>
+                </a>
+            </div>
+        </header>
+        <div id="content">
+            <div id="media-queries-container">
+                <div id="media-queries-ruler"></div>
+                <div id="lst-media-queries-container" data-gradient="-webkit-linear-gradient(top, #1d1d1d 1%, #323232 50%, #1d1d1d 99%)">
+                    <ul id="lst-media-queries"></ul>
+                </div>
+            </div>
+            <div id="progress">
+                <div id="progress-content">
+                    <div>
+                        <img src="images/ajax-loader.gif" />
+                        <br/>
+                        <span />
+                    </div>
+                </div>
+            </div>
+            <div id="preview"></div>
+            <div id="authorize">
+                <div>
+                    <img src="images/icon96.png" style="margin-right:-3px;" />
+                    <img src="images/auth-arrows.png" />
+                    <img src="images/bh-logo.png" style="margin-left:-3px;" />
+                </div>
+                
+                <a id="btn-authorize-cancel" href="#" class="button">
+                    <img src="images/ico-back.png" />
+                    <span>CANCEL</span>
+                </a>
+                &nbsp;
+                <a id="btn-authorize" href="#" class="button">
+                    <img src="images/ico-behance.png" />
+                    <span>AUTHORIZE</span>
+                </a>
+                
+                
+                <p>Responsive Inspector app needs to be authorized with Behance service, you will be redirected to behance.net website after clicking Authorize button.</p>
+            </div>
+            <div id="publish">
+                <div id="wip-preview">
+                    <img/>
+                </div>
+                <form id="wip-info">
+                    <label for="lst-wips">Existing WIPs</label>
+                    <select id="lst-wips"></select>
+                    <label for="wip-title">Title</label>
+                    <input type="text" name="wip-title" id="wip-title" required>
+                    <label for="wip-description">Description</label>
+                    <textarea name="wip-description" id="wip-description" required></textarea>
+                    <label for="wip-tags">Tags</label>
+                    <input type="text" name="wip-tags" id="wip-tags" placeholder=", comma separated" required>
+                    <label for="wip-privacy">Privacy</label>
+                    <select id="wip-privacy">
+                        <option value="public">Public</option>
+                        <option value="feedback_circle">Feedback circle</option>
+                    </select>
+                </form>
+                <a id="btn-deauthorize" href="#">Deauthorize from Behance</a>
+            </div>
+        </div>
+        <!-- templates -->
+        <script id="width-marker-tpl" type="text/template">
+            <div class="width-marker">
+                <span/>
+                <div>
+                    <img id="btn-resize" title="Resize browser window." src="images/ico-resize.png"/>
+                    <img id="btn-snapshot" title="Take whole page screenshot." src="images/ico-camera.png"/>
+                </div>
+            </div>
+        </script>
+        <script id="width-marker-line-tpl" type="text/template">
+            <div class="width-marker-line"/>
+        </script>
+        <script id="no-mq-info-tpl" type="text/template">
+            <div id="no-mq-info">This site has no media queries.</div>
+        </script>        
+    </body>
+
+</html>
